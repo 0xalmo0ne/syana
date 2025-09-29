@@ -80,8 +80,10 @@ export default function Navbar() {
 			</div>
 			{isMenuOpen && (
 				<>
-					<div className='background fixed z-30 inset-0 bg-black/50'></div>
-					<div className='offcanvas z-40 fixed bottom-0 left-0 h-full w-[250px] bg-white shadow-lg'>
+					<div
+						onClick={toggleMenu}
+						className='background fixed z-30 inset-0 bg-black/50'></div>
+					<div className='offcanvas z-40 fixed bottom-0 left-0 h-full w-[220px] bg-white shadow-lg'>
 						<div className='flex justify-between items-center w-full p-4'>
 							<img
 								src={logo}
