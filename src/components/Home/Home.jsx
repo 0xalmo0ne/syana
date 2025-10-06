@@ -1,3 +1,5 @@
+/** @format */
+
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -38,6 +40,7 @@ export default function Home() {
 				★
 			</span>
 		))
+
 	const services = [
 		{
 			title: 'صيانة الغسالات',
@@ -64,44 +67,62 @@ export default function Home() {
 		},
 	]
 
+	const companies = Array.from({ length: 30 }, (_, i) => ({
+		id: i + 1,
+		name: `شركة الصيانة رقم ${i + 1}`,
+		logo: `https://placehold.co/100x100?text=Logo+${i + 1}`,
+	}))
+
+	// const handleDetails = (companyName) => {
+	// 	alert(`عرض تفاصيل ${companyName}`)
+	// }
+
 	return (
 		<div className='font-sans'>
-			{/* ======= Hero / Banner ======= */}
+			{/* ======= Hero Section ======= */}
 			<motion.section
-				className='bg-blue-600 text-white py-50 px-6 text-center'
+				className='relative text-white py-20 px-9 text-center overflow-hidden'
 				initial={{ opacity: 0, y: -50 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 1 }}>
-				<motion.h1
-					className='text-5xl font-bold mb-4'
-					initial={{ opacity: 0, scale: 0.8 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ delay: 0.3, duration: 0.8, type: 'spring' }}>
-					أفضل خدمات صيانة الغسالات والتلاجات
-				</motion.h1>
+				{/* خلفية gradient متحركة */}
+				<div className='absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-[length:200%_200%] animate-gradient'></div>
 
-				<motion.p
-					className='text-lg mb-8'
-					initial={{ opacity: 0, y: 20 }}
-					animate={{ opacity: 1, y: 0 }}
-					transition={{ delay: 0.6, duration: 0.6 }}>
-					فريق متخصص، خدمة سريعة، وأسعار مناسبة
-				</motion.p>
+				{/* المحتوى */}
+				<div className='relative z-10'>
+					<motion.h1
+						className='text-5xl font-bold mb-4'
+						initial={{ opacity: 0, scale: 0.8 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ delay: 0.3, duration: 0.8, type: 'spring' }}>
+						أفضل خدمات صيانة الغسالات والتلاجات
+					</motion.h1>
 
-				<motion.a
-					href='tel:01007179051'
-					whileHover={{ scale: 1.1, rotate: -2 }}
-					whileTap={{ scale: 0.95 }}>
-					<button className='bg-gray-300 hover:bg-gray-400 text-black font-bold py-2 px-9 rounded-xl shadow-lg'>
-						اطلب الخدمة الآن
-					</button>
-				</motion.a>
+					<motion.p
+						className='text-lg mb-8'
+						initial={{ opacity: 0, y: 20 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.6, duration: 0.6 }}>
+						فريق متخصص، خدمة سريعة، وأسعار مناسبة
+					</motion.p>
+
+					<motion.a
+						href='tel:01007179051'
+						whileHover={{ scale: 1.1, rotate: -2 }}
+						whileTap={{ scale: 0.95 }}>
+						<button className='px-6 py-3 rounded-xl shadow-lg text-white font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 transition-all'>
+							اطلب الخدمة الآن
+						</button>
+					</motion.a>
+				</div>
 			</motion.section>
 
 			{/* ======= خدماتنا ======= */}
 			<section className='bg-gray-50 py-20 px-6'>
 				<div className='container mx-auto text-center max-w-6xl'>
-					<h2 className='text-4xl font-bold mb-12 text-gray-800'>خدماتنا</h2>
+					<h2 className='text-4xl font-bold mb-12 text-gray-800  border-b-2 pb-4 w-fit mx-auto border-blue-600'>
+						خدماتنا
+					</h2>
 					<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10'>
 						{services.map((service, index) => (
 							<motion.div
@@ -128,10 +149,43 @@ export default function Home() {
 				</div>
 			</section>
 
+			{/* ======= شركات الصيانة ======= */}
+			<section className='min-h-screen bg-gray-50 p-8'>
+				<h1 className='text-3xl font-bold text-center mb-15 text-gray-800 border-b-2 pb-4 w-fit mx-auto border-blue-600'>
+					شركات الصيانة
+				</h1>
+
+				<div className='grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+					{companies.map((company) => (
+						<div
+							key={company.id}
+							className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
+							<div className='w-24 h-24 mb-4'>
+								<img
+									src={company.logo}
+									alt={company.name}
+									className='w-full h-full object-contain'
+								/>
+							</div>
+
+							<h2 className='text-lg font-semibold text-gray-700 text-center mb-3'>
+								{company.name}
+							</h2>
+
+							<button
+								// onClick={() => handleDetails(company.name)}
+								className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors'>
+								عرض التفاصيل
+							</button>
+						</div>
+					))}
+				</div>
+			</section>
+
 			{/* ======= آراء العملاء ======= */}
 			<section className='bg-gray-50 py-16'>
 				<div className='container mx-auto px-6 text-center'>
-					<h2 className='text-3xl font-bold text-gray-800 mb-10'>
+					<h2 className='text-3xl font-bold text-gray-800 mb-15  border-b-2 pb-4 w-fit mx-auto border-blue-600'>
 						آراء عملاؤنا
 					</h2>
 					<Swiper
@@ -194,9 +248,8 @@ export default function Home() {
 					initial={{ x: 100, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
 					transition={{ duration: 0.8, delay: 0.3 }}>
-					في{' '}
-					<span className='font-semibold text-blue-600'>[Siyana i-tech]</span>،
-					نحرص على أن تعمل أجهزتك المنزلية دائمًا بكفاءة...
+					في <span className='font-semibold text-blue-600'>Siyana i-tech</span>،
+					نحرص على أن تعمل أجهزتك المنزلية دائمًا بكفاءة وجودة عالية.
 				</motion.p>
 			</motion.section>
 		</div>

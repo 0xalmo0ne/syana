@@ -25,7 +25,7 @@ export default function Navbar() {
 								target='_blank'
 								rel='noopener noreferrer'
 								className='text-blue-600text-sm'>
-								<button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl'>
+								<button className='px-4 py-2  bg-gradient-to-r from-blue-500 to-purple-500  text-sm  hover:bg-blue-700 transition-colorshover:bg-blue-700 text-white font-bold  rounded-xl'>
 									{' '}
 									اتصل بنا
 								</button>
@@ -37,7 +37,7 @@ export default function Navbar() {
 								target='_blank'
 								rel='noopener noreferrer'
 								className='text-blue-600text-sm'>
-								<button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-xl'>
+								<button className=' bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm   transition-colors hover:bg-blue-700 font-bold py-2 px-4 rounded-xl'>
 									{' '}
 									راسلنا{' '}
 								</button>
