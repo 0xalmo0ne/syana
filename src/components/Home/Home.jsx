@@ -8,6 +8,7 @@ import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/toshiba/logo_l.gif'
 import logo22 from '../../assets/kryazi/logo.svg'
+import Zanussi from '../../assets/zanossi/Zanussi-Logo.jpg'
 
 export default function Home() {
 	const navigate = useNavigate()
@@ -138,7 +139,7 @@ export default function Home() {
 					شركات الصيانة
 				</h1>
 
-				<div className='grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
+				<div className='grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-4 justify-center items-center'>
 					<div className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
 						<div className='w-24 h-24 mb-4'>
 							<img
@@ -165,6 +166,21 @@ export default function Home() {
 						</div>
 						<button
 							onClick={() => navigate('/Kriazi')}
+							className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer'>
+							عرض التفاصيل
+						</button>
+					</div>
+					<div className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
+						<div className='w-24 h-24 mb-4'>
+							<img
+								src={Zanussi}
+								alt=''
+								className='mt-7 cursor-pointer'
+								onClick={() => navigate('/Zanussi')}
+							/>
+						</div>
+						<button
+							onClick={() => navigate('/Zanussi')}
 							className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer'>
 							عرض التفاصيل
 						</button>

@@ -12,6 +12,7 @@ import Clients from './components/Clients/Clients.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Toshiba from './components/Toshiba/Toshiba.jsx'
 import Kriazi from './components/Kriazi/Kriazi.jsx'
+import Zanussi from './components/Zanussi/Zanussi.jsx'
 const router = createBrowserRouter([
 	{
 		path: '/',
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
 			{ path: '/Clients', element: <Clients /> },
 			{ path: '/Toshiba', element: <Toshiba /> },
 			{ path: '/Kriazi', element: <Kriazi /> },
+			{ path: '/Zanussi', element: <Zanussi /> },
 		],
 	},
 	{ path: '*', element: <div>Not Found</div> },
