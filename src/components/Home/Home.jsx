@@ -1,12 +1,16 @@
 /** @format */
-
+'use client'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination, Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
+import logo from '../../assets/toshiba/logo_l.gif'
+import logo22 from '../../assets/kryazi/logo.svg'
 
 export default function Home() {
+	const navigate = useNavigate()
 	const testimonials = [
 		{
 			name: 'محمد علي',
@@ -44,20 +48,17 @@ export default function Home() {
 	const services = [
 		{
 			title: 'صيانة الغسالات',
-			description:
-				'نقدم خدمة تصليح الغسالات بسرعة ومهنية، مع ضمان جودة العمل وقطع الغيار.',
+			description: 'نقدم خدمة تصليح الغسالات بسرعة ومهنية، مع ضمان جودة العمل وقطع الغيار.',
 			icon: 'https://img.icons8.com/ios-filled/80/0000FF/washing-machine.png',
 		},
 		{
 			title: 'صيانة التلاجات',
-			description:
-				'خدمة احترافية لجميع أنواع الثلاجات، لضمان تبريد مثالي وعمر أطول للجهاز.',
+			description: 'خدمة احترافية لجميع أنواع الثلاجات، لضمان تبريد مثالي وعمر أطول للجهاز.',
 			icon: 'https://img.icons8.com/ios-filled/80/0000FF/fridge.png',
 		},
 		{
 			title: 'فحص وصيانة الأجهزة المنزلية',
-			description:
-				'فحص شامل لجميع الأجهزة المنزلية وإصلاح الأعطال البسيطة قبل تفاقمها.',
+			description: 'فحص شامل لجميع الأجهزة المنزلية وإصلاح الأعطال البسيطة قبل تفاقمها.',
 			icon: 'https://img.icons8.com/ios-filled/80/0000FF/maintenance.png',
 		},
 		{
@@ -66,16 +67,6 @@ export default function Home() {
 			icon: 'https://img.icons8.com/ios-filled/80/0000FF/replace.png',
 		},
 	]
-
-	const companies = Array.from({ length: 30 }, (_, i) => ({
-		id: i + 1,
-		name: `شركة الصيانة رقم ${i + 1}`,
-		logo: `https://placehold.co/100x100?text=Logo+${i + 1}`,
-	}))
-
-	// const handleDetails = (companyName) => {
-	// 	alert(`عرض تفاصيل ${companyName}`)
-	// }
 
 	return (
 		<div className='font-sans'>
@@ -132,17 +123,9 @@ export default function Home() {
 								transition={{ duration: 0.6, delay: index * 0.2 }}
 								viewport={{ once: true }}
 								className='bg-white p-8 rounded-xl shadow hover:shadow-lg transition flex flex-col items-center'>
-								<img
-									src={service.icon}
-									alt={service.title}
-									className='w-20 h-20 mb-4'
-								/>
-								<h3 className='text-xl font-semibold mb-2 text-blue-600'>
-									{service.title}
-								</h3>
-								<p className='text-gray-600 text-center'>
-									{service.description}
-								</p>
+								<img src={service.icon} alt={service.title} className='w-20 h-20 mb-4' />
+								<h3 className='text-xl font-semibold mb-2 text-blue-600'>{service.title}</h3>
+								<p className='text-gray-600 text-center'>{service.description}</p>
 							</motion.div>
 						))}
 					</div>
@@ -156,29 +139,36 @@ export default function Home() {
 				</h1>
 
 				<div className='grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5'>
-					{companies.map((company) => (
-						<div
-							key={company.id}
-							className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
-							<div className='w-24 h-24 mb-4'>
-								<img
-									src={company.logo}
-									alt={company.name}
-									className='w-full h-full object-contain'
-								/>
-							</div>
-
-							<h2 className='text-lg font-semibold text-gray-700 text-center mb-3'>
-								{company.name}
-							</h2>
-
-							<button
-								// onClick={() => handleDetails(company.name)}
-								className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors'>
-								عرض التفاصيل
-							</button>
+					<div className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
+						<div className='w-24 h-24 mb-4'>
+							<img
+								src={logo}
+								alt=''
+								className='mt-9 cursor-pointer'
+								onClick={() => navigate('/Toshiba')}
+							/>
 						</div>
-					))}
+						<button
+							onClick={() => navigate('/Toshiba')}
+							className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer'>
+							عرض التفاصيل
+						</button>
+					</div>
+					<div className='bg-white shadow-md rounded-xl p-6 flex flex-col items-center justify-between hover:shadow-lg transition-all duration-300'>
+						<div className='w-24 h-24 mb-4'>
+							<img
+								src={logo22}
+								alt=''
+								className='mt-7 cursor-pointer'
+								onClick={() => navigate('/Kriazi')}
+							/>
+						</div>
+						<button
+							onClick={() => navigate('/Kriazi')}
+							className=' px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 text-white text-sm font-medium hover:bg-blue-700 transition-colors cursor-pointer'>
+							عرض التفاصيل
+						</button>
+					</div>
 				</div>
 			</section>
 
@@ -212,9 +202,7 @@ export default function Home() {
 										alt={client.name}
 										className='w-20 h-20 rounded-full mb-4 border-2 border-blue-400'
 									/>
-									<p className='text-gray-600 italic mb-4'>
-										“{client.feedback}”
-									</p>
+									<p className='text-gray-600 italic mb-4'>“{client.feedback}”</p>
 									<motion.div
 										className='flex mb-2'
 										animate={{ scale: [1, 1.2, 1] }}
@@ -248,8 +236,8 @@ export default function Home() {
 					initial={{ x: 100, opacity: 0 }}
 					whileInView={{ x: 0, opacity: 1 }}
 					transition={{ duration: 0.8, delay: 0.3 }}>
-					في <span className='font-semibold text-blue-600'>Siyana i-tech</span>،
-					نحرص على أن تعمل أجهزتك المنزلية دائمًا بكفاءة وجودة عالية.
+					في <span className='font-semibold text-blue-600'>Siyana i-tech</span>، نحرص على أن تعمل
+					أجهزتك المنزلية دائمًا بكفاءة وجودة عالية.
 				</motion.p>
 			</motion.section>
 		</div>
