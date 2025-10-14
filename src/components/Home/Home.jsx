@@ -7,7 +7,7 @@ import { Pagination, Autoplay } from 'swiper/modules'
 import { motion } from 'framer-motion'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/toshiba/logo.png'
-import logo22 from '../../assets/kryazi/logo.svg'
+import logo22 from '../../assets/kryazi/logo.png'
 import Zanussi from '../../assets/zanossi/Zanussi-Logo.jpg'
 
 export default function Home() {
