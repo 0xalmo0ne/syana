@@ -9,8 +9,12 @@ import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/toshiba/logo.png'
 import logo22 from '../../assets/kryazi/logo.png'
 import Zanussi from '../../assets/zanossi/Zanussi-Logo.jpg'
+import { useEffect } from 'react'
 
 export default function Home() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	const navigate = useNavigate()
 	const testimonials = [
 		{

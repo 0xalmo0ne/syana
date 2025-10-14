@@ -9,8 +9,12 @@ import logo6 from '../../assets/فريزر_1.jpg'
 import logo7 from '../../assets/غسالة اطباق.jpg'
 import logoo from '../../assets/toshiba/logo.png'
 import syana from '../../assets/toshiba/1665271313istockphoto-1169128877-612x612.jpg'
+import { useEffect } from 'react'
 
 export default function Toshiba() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	const services = [
 		{
 			title: 'صيانة الغسالات',

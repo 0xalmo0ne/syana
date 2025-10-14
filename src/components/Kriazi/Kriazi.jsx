@@ -9,8 +9,12 @@ import logo from '../../assets/kryazi/logo.png'
 import al3rosa from '../../assets/kryazi/ثلاجة العروسة.webp'
 import al3rosa2 from '../../assets/kryazi/تلاجة سوليتير.webp'
 import syana from '../../assets/toshiba/1665271313istockphoto-1169128877-612x612.jpg'
+import { useEffect } from 'react'
 
 export default function Kiriazi() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	const services = [
 		{
 			title: 'صيانة الغسالات',

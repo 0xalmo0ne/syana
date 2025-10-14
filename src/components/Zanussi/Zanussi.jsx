@@ -9,7 +9,11 @@ import logo from '../../assets/zanossi/zanussi_logo.jpg'
 import al3rosa from '../../assets/zanossi/غسالة.webp'
 import al3rosa2 from '../../assets/zanossi/تلاجة 2.webp'
 import syana from '../../assets/toshiba/1665271313istockphoto-1169128877-612x612.jpg'
+import { useEffect } from 'react'
 export default function Zanussi() {
+	useEffect(() => {
+		window.scrollTo(0, 0)
+	}, [])
 	const services = [
 		{
 			title: 'صيانة الغسالات',
